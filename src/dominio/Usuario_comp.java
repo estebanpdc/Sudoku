@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream:src/dominio/Usuario_comp.java
 package dominio;
+=======
+package clases;
+>>>>>>> Stashed changes:src/clases/Usuario_comp.java
 /**
 
  * Creada por el grupo de Hidato
