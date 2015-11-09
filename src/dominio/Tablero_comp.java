@@ -1,29 +1,20 @@
 package dominio;
-
+ 
 public class Tablero_comp {
        
-        private Casilla[][] tauler;
-        private int mida;
-       
-        /**
-     * Crea un tauler buit
-     */
-        public Tablero_comp()
-        {
-                tauler = new Casilla[0][0];
-                mida = 0;
-        }
+        protected Casilla_comp[][] tauler;
+        protected int mida;
        
         /**
          * Crea un tauler de mida NxN
          */
         public Tablero_comp(int N)
         {
-                tauler = new Casilla[N][N];
+                tauler = new Casilla_comp[N][N];
                 int i,j;
                 for (i = 0; i < N; ++i) {
                         for (j = 0; j < N; ++j) {
-                                tauler[i][j] = new Casilla();
+                                tauler[i][j] = new Casilla_comp(new boolean[mida], false, 0);
                         }
                 }
                 mida = N;
@@ -32,7 +23,7 @@ public class Tablero_comp {
         /**
          * Retorna la mida del tauler
          */
-        private int getMida()
+        public int getMida()
         {
                 return mida;
         }
@@ -41,7 +32,7 @@ public class Tablero_comp {
          * Retorna el valor de la casella a la posicio
          * x,y del tauler
          */
-        private int getValorCasella(int x, int y)
+        public int getValorTauler(int x, int y)
         {
                 return tauler[x][y].getValor();
         }
@@ -50,7 +41,7 @@ public class Tablero_comp {
          * Posa n a la casella que hi ha a la posicio
          * x,y del tauler
          */
-        private void setValorCasella(int x, int y, int n)
+        public void setValorTauler(int x, int y, int n)
         {
                 if (!tauler[x][y].isPor_defecto()) tauler[x][y].setValor(n);
         }
@@ -59,26 +50,44 @@ public class Tablero_comp {
          * Esborra el numero de la casella que hi ha
          * a la posicio x,y del tauler
          */
-        private void esborrarValorCasella(int x, int y)
+        public void esborrarValorTauler(int x, int y)
         {
                 if (!tauler[x][y].isPor_defecto()) tauler[x][y].setValor(0); //Considerem 0 = casella no te valor
+        }
+       
+        /**
+         * Retorna els candidats de la casella que hi ha
+         * a la posicio x,y del tauler
+         */
+        public boolean[] getCandidatsTauler(int x, int y)
+        {
+                return tauler[x][y].getCandidatos();
         }
        
         /**
          * Posa n com a candidat de la casella que hi ha
          * a la posicio x,y del tauler
          */
-        private void setCandidatCasella(int x, int y, int n)
+        public void setCandidatTauler(int x, int y, int n)
         {
                 tauler[x][y].setCandidat(n);
         }
        
         /**
          * Esborra n dels candidats de la casella que hi
-         * ha a la posició x,y del tauler
+         * ha a la posiciï¿½ x,y del tauler
          */
-        private void esborrarCandidatCasella(int x, int y, int n)
+        public void esborrarCandidatTauler(int x, int y, int n)
         {
                 tauler[x][y].esborrarCandidat(n);
+        }
+       
+        /**
+         * Posa la casella de la posicio x,y del tauler com
+         * a defecte o no
+         */
+        public void setCasellaPor_defecto(int x, int y, boolean b)
+        {
+                tauler[x][y].setPor_defecto(b);
         }
 }
