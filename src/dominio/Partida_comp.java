@@ -1,9 +1,4 @@
-<<<<<<< Updated upstream:src/dominio/Partida_comp.java
 package dominio;
-=======
-package clases;
-
->>>>>>> Stashed changes:src/clases/Partida_comp.java
 /**
  * Creado por el grupo de Sudoku
  */

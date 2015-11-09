@@ -1,14 +1,5 @@
-<<<<<<< Updated upstream:src/dominio/Casilla_comp.java
 package dominio;
 
-=======
-package clases;
-
-import java.util.Set;
-/**
- * Creada por el grupo de Sudoku
- */
->>>>>>> Stashed changes:src/clases/Casilla_comp.java
 public class Casilla_comp {
     private boolean candidatos[];
     private boolean por_defecto; // si esta en true es una casilla que esta llena desde el comienzo.
