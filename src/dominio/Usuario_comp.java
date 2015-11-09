@@ -1,4 +1,6 @@
+package dominio;
 /**
+
  * Creada por el grupo de Hidato
  */
 import java.io.Serializable;
