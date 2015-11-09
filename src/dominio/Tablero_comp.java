@@ -3,8 +3,8 @@ package dominio;
 public class Tablero_comp {
     
     private Casilla_comp[][] tauler;
-    private int mida;
-   
+    protected int mida;
+    
     /**
  * Crea un tauler buit
  */
