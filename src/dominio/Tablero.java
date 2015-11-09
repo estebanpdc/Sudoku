@@ -1,21 +1,22 @@
 package dominio;
 
 public class Tablero extends Tablero_comp {
-	private Integer solucion[][];
+	
 	private Integer dificultad; // 1: facil, 2: medio, 3: dificil
 	
-	public Tablero() {
-		
-	}
+	private Integer solucion[][];
 	
-
+	public Tablero (int N, int dificultad) {
+		super(N);
+		this.dificultad = dificultad;
+	}
 	
 	public void setMatrizSolucion(Integer[][] matriz) {
 		this.solucion = matriz;
 	}
 	
-	public Integer[][] getMatrizSolucion() {
-		return solucion;
+	public Integer getPosicionMatrizSolucion(int x, int y) {
+		return solucion[x][y];
 	}
 	
 	public void setDificultad(int dificultad) {
