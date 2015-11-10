@@ -14,12 +14,11 @@ public class Tablero_comp {
         {
                 tauler = new Casilla_comp[N][N];
                 mida = N;
-                boolean[] b= new boolean[mida+1];
-                Arrays.fill(b, true);
+       
                 int i,j;
                 for (i = 0; i < N; ++i) {
                         for (j = 0; j < N; ++j) {
-                                tauler[i][j] = new Casilla_comp(b, false, 0);
+                                tauler[i][j] = new Casilla_comp(mida+1,false);
                         }
                 }
         }

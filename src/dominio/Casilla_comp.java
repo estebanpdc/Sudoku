@@ -24,7 +24,7 @@ public class Casilla_comp {
         candidatos = new boolean[n];
         int i;
         for (i = 0; i < n; ++i) {
-                candidatos[i] = false;
+                candidatos[i] = true;
         }
         this.por_defecto = por_defecto;
         valor = 0;

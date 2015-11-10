@@ -20,46 +20,60 @@ public class main {
 		String ruta = "/Users/estebanpdc/Desktop/prueba.txt";
 		File archivo = new File(ruta);
 		Scanner s = new Scanner(archivo);
-		initCandidatos(t);
 		for(int i=0; i<n*n; ++i){
 			for(int j=0; j<n*n; ++j){
 				int valor=s.nextInt();
 				t.setValorTauler(i, j, valor);
 				if (valor != 0) {
+					t.setCandidatsTauler(i, j, new boolean[n*n+1]);
 					actualizarPosiblesValorEscrito(i,j,n,valor,t);
 				}
 			}
 		}
-		//escribir(t);
+		recorrer(t,n);
+		escribir(t);
 		escribirCandidatos(t);
 		s.close();
 		
 		
 	}
 	
-	private static void escribir(Tablero t) {
-		for(int i=0; i<9; ++i){
-			for(int j=0; j<9; ++j){
-				System.out.println(t.getValorTauler(i, j));
+	private static void recorrer(Tablero t,int n) {
+		for(int i=0; i<n*n; ++i){
+			for(int j=0; j<n*n; ++j){
+				boolean res[] = t.getCandidatsTauler(i, j);
+				int aux=0;
+				int valor=0;
+				for(int l = 1; l < 10; ++l) {
+					if (res[l] == true){
+						++aux;
+						valor=l;
+					}
+				}
+				if(aux==1){
+					t.setValorTauler(i, j, valor);
+					actualizarPosiblesValorEscrito(i,j,n,valor,t);
+				}
+				
+
 			}
 		}
 		
 	}
 
-	private static void initCandidatos(Tablero t) {
-		boolean[] b;
-		b= new boolean[10];
-		for (int k = 0; k < 10; ++k) {
-			b[k] = true;
-		}
-		int n=t.getMida();
-		for(int i=0; i<n; ++i){
-			for(int j=0; j<n; ++j){
-				t.setCandidatsTauler(i, j, b);
+	private static void escribir(Tablero t) {
+		for(int i=0; i<9; ++i){
+			if(i==3 || i==6) System.out.println("---------------------");
+			for(int j=0; j<9; ++j){
+				if(j==3 || j==6) System.out.print("| ");
+				System.out.print(t.getValorTauler(i, j)+ " ");
 			}
+			System.out.println(" ");
 		}
 		
 	}
+
+	
 
 	private static void escribirCandidatos(Tablero t) {
 		boolean[] b;
@@ -68,8 +82,9 @@ public class main {
 		for(int i=0; i<n; ++i){
 			for(int j=0; j<n; ++j){
 				boolean res[] = t.getCandidatsTauler(i, j);	
+				System.out.print("["+i+"]["+j+"]: ");
 				for(int l = 1; l < 10; ++l) {
-					if (res[l] = true) System.out.print(l);
+					if (res[l] == true) System.out.print(l);
 				}
 				System.out.println("");
 			}
@@ -79,22 +94,11 @@ public class main {
 
 	private static void actualizarPosiblesValorEscrito(int i, int j, int N, int valor, Tablero t) {
 	        int caja = N * (i / N) + j / N;
-	        for(int k=0;k<9; ++k) t.esborrarCandidatTauler(i, j, k);
-	        for (int it = 0; it < N * N; ++it) {
-	          //  if (t.getValorTauler(it, j)==0) {
-	                t.esborrarCandidatTauler(it, j, valor);
-	           // }
-	        }
-	        for (int it2 = 0; it2 < N * N; ++it2) {
-	        	if (t.getValorTauler(i, it2)==0) {
-	                t.esborrarCandidatTauler(i, it2, valor);
-	            }
-	        }
-	        for (int it3 = (i / N) ; it3 < N + (i / N); ++it3) {
-	            for(int it4 = j / N; it4 < N + (j / N); ++it4) {
-	            	if (t.getValorTauler(i, j)==0) {
-		                t.esborrarCandidatTauler(i, j, valor);
-		            }
+	        for (int it = 0; it < N * N; ++it)  t.esborrarCandidatTauler(i, it, valor);
+	        for (int it2 = 0; it2 < N * N; ++it2) t.esborrarCandidatTauler(it2, j, valor);
+	        for (int it3 = (i / N)*3 ; it3 < (i/N)*3+N; ++it3) {
+	            for(int it4 =( j / N)*3; it4 < (j/N)*3+N; ++it4) {
+		                t.esborrarCandidatTauler(it3, it4, valor);
 	            }
 	        }		
 	}
