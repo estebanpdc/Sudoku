@@ -41,7 +41,7 @@ public class Casilla_comp {
     /*Post: se ha devuelto la lista de candidatos en un set. */
  
     /*Pre: cierto */
-    public void setCandidatos(boolean candidatos[], int n) {
+    public void setCandidatos(boolean candidatos[]) {
         this.candidatos = candidatos;
     }
     /*Post: candidatos es la nueva lista de candidatos del objeto. */

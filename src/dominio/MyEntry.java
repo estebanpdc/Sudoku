@@ -1,36 +1,35 @@
 package dominio;
 
-public class MyEntry<A, B> {
+public class MyEntry {
 
-    private A component1;
-    private B component2;
+    private String component1;
+    private Integer component2;
 
     public MyEntry() {
-            super();
     }
 
-    public MyEntry(A component1, B component2) {
+    public MyEntry(String component1, Integer component2) {
             this.component1 = component1;
             this.component2 = component2;
     }
 
-    public A fst() {
+    public String fst() {
             return component1;
     }
 
-    public void setComponent1(A component1) {
+    public void setComponent1(String component1) {
             this.component1 = component1;
     }
 
-    public B snd() {
+    public Integer snd() {
             return component2;
     }
 
-    public void setComponent2(B component2) {
+    public void setComponent2(Integer component2) {
             this.component2 = component2;
     }
     
-    
+    /*
     @Override
     public String toString() {
             return "<" + component1 + "," + component2 + ">";
@@ -71,5 +70,5 @@ public class MyEntry<A, B> {
 
     public static <A, B> MyEntry<A, B> create(A component1, B component2) {
             return new MyEntry<A, B>(component1, component2);
-    }
+    }*/
 }
