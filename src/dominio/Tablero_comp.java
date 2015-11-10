@@ -1,5 +1,7 @@
 package dominio;
- 
+
+import java.util.Arrays;
+
 public class Tablero_comp {
        
         protected Casilla_comp[][] tauler;
@@ -11,13 +13,15 @@ public class Tablero_comp {
         public Tablero_comp(int N)
         {
                 tauler = new Casilla_comp[N][N];
+                mida = N;
+                boolean[] b= new boolean[mida+1];
+                Arrays.fill(b, true);
                 int i,j;
                 for (i = 0; i < N; ++i) {
                         for (j = 0; j < N; ++j) {
-                                tauler[i][j] = new Casilla_comp(new boolean[mida], false, 0);
+                                tauler[i][j] = new Casilla_comp(b, false, 0);
                         }
                 }
-                mida = N;
         }
        
         /**
@@ -72,6 +76,7 @@ public class Tablero_comp {
         {
                 tauler[x][y].setCandidat(n);
         }
+     
        
         /**
          * Esborra n dels candidats de la casella que hi

@@ -1,8 +1,5 @@
 package dominio;
 
-import java.util.AbstractMap;
-import java.util.HashMap;
-import java.util.Map.Entry;
 
 public class Tablero extends Tablero_comp {
 	
@@ -20,6 +17,10 @@ public class Tablero extends Tablero_comp {
 		this.solucion = matriz;
 	}
 	
+	public void setCandidatsTauler(int x, int y, boolean[] b) {
+		tauler[x][y].setCandidatos(b);
+	}
+	
 	public Integer getPosicionMatrizSolucion(int x, int y) {
 		return solucion[x][y];
 	}
@@ -31,12 +32,12 @@ public class Tablero extends Tablero_comp {
 		return dificultad;
 	}
 	
-	public Entry<String,Integer>[] getRecord() {
+	public MyEntry[] getRecord() {
 		return record.getClasificacion();
 	}
 	
 	public void setTiempoRecord(String usuario, Integer tiempo) {
-		MyEntry<String, Integer> res = new MyEntry<String,Integer>(usuario,tiempo);
+		MyEntry res = new MyEntry(usuario,tiempo);
 		record.setClasificacion(res);
 	}
 }
