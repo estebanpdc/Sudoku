@@ -1,4 +1,5 @@
 package dominio;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 
@@ -6,19 +7,23 @@ import java.util.Map.Entry;
  * Created by Jesus on 21/10/15.
  */
 public class Record {
-    private Entry<String,Integer> clasificacion[];
+    private ArrayList<MyEntry<String,Integer>> clasificacion;
+    private int nrecords;
 
-
-    public Record(){}
-    public Record(Entry<String,Integer> clasif[]){
+    public Record(){
+    	this.nrecords = 0;
+    	clasificacion = new ArrayList<MyEntry<String,Integer>>();
+    }
+    public Record(MyEntry<String,Integer> clasif[], int nrecords){
         this.clasificacion = clasif;
+        this.nrecords = nrecords;
     }
 
-    public void setClasificacion(Entry<String,Integer> clasif[]) {
-       this.clasificacion = clasif;
+    public void setClasificacion(MyEntry<String,Integer> clasif) {
+    	
     }
     
-    public Entry<String,Integer>[] getClasificacion() {
+    public MyEntry<String,Integer>[] getClasificacion() {
     	return clasificacion;
     }
     
