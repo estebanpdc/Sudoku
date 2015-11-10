@@ -22,4 +22,15 @@ public class ControladorCreacionTablero {
 		ComprobarSolucionUnica csu = new ComprobarSolucionUnica();
 		return csu.tieneSolucion(miTablero);
 	}
+	
+	public Integer nivelDificultad() {
+		ComprobarDificultad cd = new ComprobarDificultad();
+		return cd.dificultad();
+	}
+	
+	public Tablero crearSudoku(int dificultad, int n) {
+		CrearTablero ct = new CrearTablero();
+		return ct.generarTablero(dificultad, n);
+	}
+	
 }
