@@ -1,8 +1,6 @@
 package dominio;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Map.Entry;
+
+
 
 
 /**
@@ -36,6 +34,14 @@ public class Record {
     	
     }
     
+    public int getNrecords(){
+    	return nrecords;
+    }
+    
+    public void setnrecords(int n){
+    	nrecords = n;
+    }
+    
     public MyEntry[] getClasificacion() {
     	return clasificacion;
     }
@@ -54,6 +60,7 @@ public class Record {
     		else fin=false;
     	}
     }
+	
     private static void swap(MyEntry a, MyEntry b){
     	int auxI=a.snd();
     	String auxS= a.fst();

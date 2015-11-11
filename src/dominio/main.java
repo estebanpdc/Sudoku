@@ -13,70 +13,43 @@ public class main {
 
 	
 
-	public static void main(String[] args) throws FileNotFoundException {
-		int n=3;
-		Tablero t;
-		t= new Tablero(n*n,0);
-		String ruta = "/Users/estebanpdc/Desktop/prueba.txt";
-		File archivo = new File(ruta);
-		Scanner s = new Scanner(archivo);
-		initCandidatos(t);
-		for(int i=0; i<n*n; ++i){
-			for(int j=0; j<n*n; ++j){
-				int valor=s.nextInt();
-				t.setValorTauler(i, j, valor);
-				if (valor != 0) {
-					actualizarPosiblesValorEscrito(i,j,n,valor,t);
-				}
-			}
-		}
-		//escribir(t);
-		escribirCandidatos(t);
-		s.close();
+	public static void main(String[] args) throws IOException {
 		
+		ControladorDominio cd= new ControladorDominio();	
 		
 	}
 	
-	private static void escribir(Tablero t) {
-		for(int i=0; i<9; ++i){
-			for(int j=0; j<9; ++j){
-				System.out.println(t.getValorTauler(i, j));
-			}
-		}
-		
-	}
-
-	private static void initCandidatos(Tablero t) {
-		boolean[] b;
-		b= new boolean[10];
-		for (int k = 0; k < 10; ++k) {
-			b[k] = true;
-		}
-		int n=t.getMida();
-		for(int i=0; i<n; ++i){
-			for(int j=0; j<n; ++j){
-				t.setCandidatsTauler(i, j, b);
-			}
-		}
-		
-	}
-
-	private static void escribirCandidatos(Tablero t) {
-		boolean[] b;
-		b= new boolean[10];
-		int n=t.getMida();
-		for(int i=0; i<n; ++i){
-			for(int j=0; j<n; ++j){
-				boolean res[] = t.getCandidatsTauler(i, j);	
+	/*private static void recorrer(Tablero t,int n) {
+		for(int i=0; i<n*n; ++i){
+			for(int j=0; j<n*n; ++j){
+				boolean res[] = t.getCandidatsTauler(i, j);
+				int aux=0;
+				int valor=0;
 				for(int l = 1; l < 10; ++l) {
-					if (res[l] = true) System.out.print(l);
+					if (res[l] == true){
+						++aux;
+						valor=l;
+					}
 				}
-				System.out.println("");
+				if(aux==1){
+					t.setValorTauler(i, j, valor);
+					actualizarPosiblesValorEscrito(i,j,n,valor,t);
+				}
+				
+
 			}
-		}
+		}*/
 		
 	}
 
+
+
+	
+
+	
+
+
+<<<<<<< HEAD
 	private static void actualizarPosiblesValorEscrito(int i, int j, int N, int valor, Tablero t) {
 	        int caja = N * (i / N) + j / N;
 	        for(int k=0;k<9; ++k) t.esborrarCandidatTauler(i, j, k);
@@ -100,3 +73,7 @@ public class main {
 	}
 	
 }
+=======
+	
+
+>>>>>>> origin/master
