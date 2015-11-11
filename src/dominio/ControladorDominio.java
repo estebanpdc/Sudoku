@@ -15,17 +15,19 @@ public class ControladorDominio {
 	}
 	
 	private void inicializar() throws IOException {
-		//pedirLogin();
-		escribirOpciones();
+		pedirLogin();
+		//escribirOpciones();
 	}
 
 	private void pedirLogin() throws IOException {
+		ControladorFicheros cf= new ControladorFicheros();
 		String user,password;
 		System.out.print("Introduce tu Usuario: ");
 		user=br.readLine();
 		System.out.print("Introduce tu Password: ");
 		password=br.readLine();
 		u= new Usuario_comp(user,password);
+		if(cf.usuarioExiste("/Users/estebanpdc/Desktop/usuario.txt", u)) System.out.print("Login correcto ");
 		System.out.println();
 		
 	}

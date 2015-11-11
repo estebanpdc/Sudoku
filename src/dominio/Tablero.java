@@ -43,7 +43,7 @@ public class Tablero extends Tablero_comp {
 	}
 	public  void escribir() {
 		for(int i=0; i<9; ++i){
-			if(i==3 || i==6) System.out.println("------+-------+------");
+			if(i==Math.sqrt(mida) || i==Math.sqrt(mida)*2) System.out.println("------+-------+------");
 			for(int j=0; j<9; ++j){
 				if(j==3 || j==6) System.out.print("| ");
 				System.out.print(tauler[i][j].getValor() + " ");

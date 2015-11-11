@@ -20,13 +20,15 @@ public class ControladorPartida {
 		int valor=0;
 		int i=0;
 		int j=0;
-		System.out.println("Esctibe -1 -1 -1 para acabar");
+		System.out.println("<<Escribe -1 -1 -1 para acabar>>");
+		System.out.println("Modificar casilla: i j valor:");
 		i= br.nextInt();
 		j=br.nextInt();
 		valor=br.nextInt();
 		while(valor!=-1){
 			p.modificarValorCasilla(i, j, valor);
 			p.escribirTablero();
+			System.out.println("Modificar casilla: i j valor:");
 			i= br.nextInt();
 			j=br.nextInt();
 			valor=br.nextInt();
