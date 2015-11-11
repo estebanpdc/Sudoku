@@ -1,4 +1,6 @@
-package dominio;
+package clasesPropias;
+
+import clasesComunes.Usuario_comp;
 
 public class ControladorRanking {
 	

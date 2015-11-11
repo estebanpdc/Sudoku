@@ -1,4 +1,4 @@
-package dominio;
+package clasesComunes;
  
 public class Casilla_comp {
  

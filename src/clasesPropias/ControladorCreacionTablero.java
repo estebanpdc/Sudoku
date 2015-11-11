@@ -1,4 +1,4 @@
-package dominio;
+package clasesPropias;
 
 public class ControladorCreacionTablero {
 	private Tablero miTablero;
@@ -18,19 +18,8 @@ public class ControladorCreacionTablero {
 		miTablero.setValorTauler(x, y, valor);
 	}
 	
-	public boolean tieneSolucion() throws Exception {
+	public boolean tieneSolucion() {
 		ComprobarSolucionUnica csu = new ComprobarSolucionUnica();
 		return csu.tieneSolucionUnica(miTablero);
 	}
-	
-	public Integer nivelDificultad() {
-		ComprobarDificultad cd = new ComprobarDificultad();
-		return cd.dificultad();
-	}
-	
-	public Tablero crearSudoku(int dificultad, int n) {
-		CrearTablero ct = new CrearTablero();
-		return ct.generarTablero(dificultad, n);
-	}
-	
 }

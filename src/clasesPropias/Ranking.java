@@ -1,4 +1,4 @@
-package dominio;
+package clasesPropias;
 
 import java.util.HashMap;
 public class Ranking {

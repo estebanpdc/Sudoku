@@ -1,4 +1,4 @@
-package dominio;
+package clasesPropias;
 
 public class GenerarSudoku extends Algoritmo{
 

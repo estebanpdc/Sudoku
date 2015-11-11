@@ -1,4 +1,4 @@
-package dominio;
+package clasesComunes;
 /**
  * Creado por el grupo de Sudoku
  */
