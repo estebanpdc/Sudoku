@@ -18,7 +18,7 @@ public class ControladorCreacionTablero {
 		miTablero.setValorTauler(x, y, valor);
 	}
 	
-	public boolean tieneSolucion() {
+	public boolean tieneSolucion() throws Exception {
 		ComprobarSolucionUnica csu = new ComprobarSolucionUnica();
 		return csu.tieneSolucion(miTablero);
 	}

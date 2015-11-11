@@ -53,7 +53,7 @@ public class ControladorFicheros {
 	public Tablero leerTablero(int n) throws FileNotFoundException{
 		Tablero t= new Tablero(n,1);
 		Algoritmo a= new Algoritmo();
-		String ruta = "/Users/estebanpdc/Desktop/prueba.txt";
+		String ruta = "/Users/Jesus/Desktop/sudoku.txt";
 		File archivo = new File(ruta);
 		Scanner s = new Scanner(archivo);
 		for(int i=0; i<n; ++i){
