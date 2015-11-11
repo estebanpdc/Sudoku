@@ -81,9 +81,9 @@ public class main {
 	        int caja = N * (i / N) + j / N;
 	        for(int k=0;k<9; ++k) t.esborrarCandidatTauler(i, j, k);
 	        for (int it = 0; it < N * N; ++it) {
-	          //  if (t.getValorTauler(it, j)==0) {
+	        	if (t.getValorTauler(it, j)==0) {
 	                t.esborrarCandidatTauler(it, j, valor);
-	           // }
+	        	}
 	        }
 	        for (int it2 = 0; it2 < N * N; ++it2) {
 	        	if (t.getValorTauler(i, it2)==0) {
