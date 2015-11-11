@@ -14,16 +14,21 @@ import java.util.regex.Pattern;
 
 import clasesComunes.Usuario_comp;
 
+
 public class ControladorFicheros {
 	private Scanner s;
+	private String dataUsers;
+	private String dataTableros;
+	private String dataRanking;
 	
-	
-	public ControladorFicheros (){
-		
+	public ControladorFicheros () throws IOException{
+		dataUsers = "./data/usuarios.txt";
+		dataTableros= "./data/tableros.txt";
+		dataRanking= "./data/ranking.txt";
 	}
 	
 	public void guardarUsuario(Usuario_comp u) throws IOException {
-		FileWriter fw = new FileWriter ("./usuario.txt",true);
+		FileWriter fw = new FileWriter (dataUsers,true);
 		PrintWriter pr = new PrintWriter(fw);
 		pr.print(u.nombre);
 		pr.print(" ");
@@ -52,7 +57,7 @@ public class ControladorFicheros {
 	
 	public boolean usuarioExiste(Usuario_comp u) throws FileNotFoundException {
 		boolean b=false;
-		File archivo= new File("./usuario.txt");
+		File archivo= new File("dataUser");
 		s= new Scanner(archivo);
 		String user, password;
 		boolean fin=true;
@@ -70,8 +75,7 @@ public class ControladorFicheros {
 	public Tablero leerTablero(int n) throws FileNotFoundException{
 		Tablero t= new Tablero(n,1);
 		Algoritmo a= new Algoritmo();
-		String ruta = "/Users/estebanpdc/Desktop/prueba.txt";
-		File archivo = new File(ruta);
+		File archivo = new File(dataTableros);
 		Scanner s = new Scanner(archivo);
 		for(int i=0; i<n; ++i){
 			for(int j=0; j<n; ++j){
@@ -113,7 +117,7 @@ public class ControladorFicheros {
 	
 	public boolean existeNombre(String nombre) throws IOException {
 		boolean b=false;
-		File archivo= new File("./usuario.txt");
+		File archivo= new File(dataUsers);
 		Scanner s= new Scanner(archivo);
 		boolean fin=true;
 		String user;

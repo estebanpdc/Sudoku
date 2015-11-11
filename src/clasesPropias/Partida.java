@@ -1,13 +1,14 @@
 package clasesPropias;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 import clasesComunes.Partida_comp;
 import clasesComunes.Usuario_comp;
 
 public class Partida extends Partida_comp {
 
-	Partida(int n, int dif,Usuario_comp u) throws FileNotFoundException{
+	Partida(int n, int dif,Usuario_comp u) throws IOException{
 		ControladorFicheros cf= new ControladorFicheros();
 		tableroP=cf.leerTablero(n);
 		usuarioP=u;

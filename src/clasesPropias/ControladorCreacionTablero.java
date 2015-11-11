@@ -18,8 +18,10 @@ public class ControladorCreacionTablero {
 		miTablero.setValorTauler(x, y, valor);
 	}
 	
-	public boolean tieneSolucion() {
+	public boolean tieneSolucion() throws Exception {
 		ComprobarSolucionUnica csu = new ComprobarSolucionUnica();
+		ControladorFicheros cf = new ControladorFicheros();
+		miTablero= cf.leerTablero(9);
 		return csu.tieneSolucionUnica(miTablero);
 	}
 }

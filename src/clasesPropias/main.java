@@ -12,8 +12,9 @@ import java.util.Scanner;
 public class main {
 	
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws Exception {
 		Scanner s;
+		prueba();
 		s=new Scanner(System.in);
 		System.out.println("1.- Modo programa");
 		System.out.println("2.- Modo Drivers");
@@ -26,6 +27,13 @@ public class main {
 			
 		};
 		s.close();		
+		
+	}
+
+	private static void prueba() throws Exception {
+		ControladorCreacionTablero cc= new ControladorCreacionTablero();
+		
+		if(cc.tieneSolucion()) System.out.println("tiene solucion unica");
 		
 	}
 	
