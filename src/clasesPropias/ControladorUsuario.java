@@ -1,9 +1,11 @@
-package dominio;
+package clasesPropias;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
+
+import clasesComunes.Usuario_comp;
 
 public class ControladorUsuario {
 	private Scanner s;

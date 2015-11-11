@@ -1,8 +1,10 @@
-package dominio;
+package clasesPropias;
 
 public class Algoritmo {
 	
 	public Algoritmo() {}
+	
+	
 	public static void actualizarPosiblesValorEscrito(int i, int j, int N, int valor, Tablero t) {
 	       
         for (int it = 0; it < N * N; ++it)  t.esborrarCandidatTauler(i, it, valor);
@@ -12,5 +14,26 @@ public class Algoritmo {
 	                t.esborrarCandidatTauler(it3, it4, valor);
             }
         }		
+	}
+	
+	public static void recorrer(Tablero t,int n) {
+		for(int i=0; i<n*n; ++i){
+			for(int j=0; j<n*n; ++j){
+				boolean res[] = t.getCandidatsTauler(i, j);
+				int aux=0;
+				int valor=0;
+				for(int l = 1; l < 10; ++l) {
+					if (res[l] == true){
+						++aux;
+						valor=l;
+					}
+				}
+				if(aux==1){
+					t.setValorTauler(i, j, valor);
+				}
+				
+
+			}
+		}
 	}
 }

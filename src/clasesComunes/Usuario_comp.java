@@ -1,4 +1,4 @@
-package dominio;
+package clasesComunes;
 /**
 
  * Creada por el grupo de Hidato
@@ -7,13 +7,13 @@ import java.io.Serializable;
 
 public class Usuario_comp implements Serializable{
 
-    private static final long serialVersionUID = 1L;
+    //private static final long serialVersionUID = 1L;
     public String nombre;
     public String password;
 
     /*PRE: No existe ningún Jugador con nombre = 'nombre'.
      */
-    Usuario_comp(String nombre, String password){
+   public Usuario_comp(String nombre, String password){
         this.nombre = nombre;
         this.password = password;
     }

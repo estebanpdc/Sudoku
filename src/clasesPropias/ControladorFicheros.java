@@ -1,6 +1,6 @@
-package dominio;
+package clasesPropias;
 
-import java.io.BufferedReader;
+import clasesComunes.Usuario_comp;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
@@ -11,6 +11,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 import java.util.regex.Pattern;
+
+import clasesComunes.Usuario_comp;
 
 public class ControladorFicheros {
 	private Scanner s;
@@ -68,7 +70,7 @@ public class ControladorFicheros {
 	public Tablero leerTablero(int n) throws FileNotFoundException{
 		Tablero t= new Tablero(n,1);
 		Algoritmo a= new Algoritmo();
-		String ruta = "/Users/Jesus/Desktop/sudoku.txt";
+		String ruta = "/Users/estebanpdc/Desktop/prueba.txt";
 		File archivo = new File(ruta);
 		Scanner s = new Scanner(archivo);
 		for(int i=0; i<n; ++i){

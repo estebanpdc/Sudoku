@@ -1,6 +1,9 @@
-package dominio;
+package clasesPropias;
 
 import java.io.FileNotFoundException;
+
+import clasesComunes.Partida_comp;
+import clasesComunes.Usuario_comp;
 
 public class Partida extends Partida_comp {
 

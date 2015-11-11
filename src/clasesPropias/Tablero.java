@@ -1,5 +1,6 @@
-package dominio;
+package clasesPropias;
 
+import clasesComunes.Tablero_comp;
 
 public class Tablero extends Tablero_comp {
 	

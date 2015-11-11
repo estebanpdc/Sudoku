@@ -1,8 +1,10 @@
-package dominio;
+package clasesPropias;
 
 
 import java.io.IOException;
 import java.util.Scanner;
+
+import clasesComunes.Usuario_comp;
 
 public class ControladorPartida {
 	private Partida p;
