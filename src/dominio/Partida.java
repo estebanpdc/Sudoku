@@ -12,6 +12,7 @@ public class Partida extends Partida_comp {
 	
 	public void escribirTablero(){
 		((Tablero) tableroP).escribir();
+		//((Tablero) tableroP).escribirCandidatos();
 	}
 	
 	
