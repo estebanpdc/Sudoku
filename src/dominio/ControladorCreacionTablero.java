@@ -20,7 +20,7 @@ public class ControladorCreacionTablero {
 	
 	public boolean tieneSolucion() throws Exception {
 		ComprobarSolucionUnica csu = new ComprobarSolucionUnica();
-		return csu.tieneSolucion(miTablero);
+		return csu.tieneSolucionUnica(miTablero);
 	}
 	
 	public Integer nivelDificultad() {
