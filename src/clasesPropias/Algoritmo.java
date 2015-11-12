@@ -16,7 +16,7 @@ public class Algoritmo {
         }		
 	}
 	
-	public static void recorrer(Tablero t,int n) {
+	public static void hiddenSingles(Tablero t,int n) {
 		for(int i=0; i<n*n; ++i){
 			for(int j=0; j<n*n; ++j){
 				boolean res[] = t.getCandidatsTauler(i, j);
