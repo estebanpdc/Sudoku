@@ -35,7 +35,7 @@ public class main {
 		ControladorFicheros cf= new ControladorFicheros();
 		Algoritmo a= new Algoritmo();
 		Tablero t= cf.leerTablero(9);
-		//t.escribir();
+		t.escribir();
 		//t.escribirCandidatos();
 		np.nakedPairs(t);
 		t.escribirCandidatos();

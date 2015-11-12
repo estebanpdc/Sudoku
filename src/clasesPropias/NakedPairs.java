@@ -3,6 +3,7 @@ package clasesPropias;
 import java.util.ArrayList;
 
 public class NakedPairs extends Algoritmo{
+
 	public void nakedPairs(Tablero t){
 		for(int i=0; i<t.getMida();++i){
 			for(int j=0; j<t.getMida(); ++j){
@@ -11,8 +12,8 @@ public class NakedPairs extends Algoritmo{
 				cand=Candidatos(aux);
 				Integer[] ij=new Integer[1];
 				if(cand.size()==2){
-					//if(NpFila(t,i,j,cand,ij))borrarNpF(cand, i,j,ij,t);
-					//if(NpColumna(t,i,j,cand,ij)) borrarNpC(cand,i,j,ij,t);
+					if(NpFila(t,i,j,cand,ij))borrarNpF(cand, i,j,ij,t);
+					if(NpColumna(t,i,j,cand,ij)) borrarNpC(cand,i,j,ij,t);
 					ij=new Integer[2];
 					if(NpRegion(t,i,j,cand,ij)) borrarNpR(cand, i, j, ij, t);
 				}
@@ -98,8 +99,9 @@ public class NakedPairs extends Algoritmo{
 		int box_size= (int) Math.sqrt(t.getMida());
 		for(int k=i/box_size*box_size; k<i/box_size*box_size+box_size; ++k){
 			for (int l=j/box_size*box_size; l < j/box_size*box_size+box_size; ++l){
-				if(!(k==ij[0] && l==ij[1]) || !(i==k && l==ij[1])){
-					System.out.println("Me toca borrar: "+ cand1.get(0)+ " y "+ cand1.get(1) + " de "+ k + " " + l);
+				//System.out.println("Estoy en [" +i + "][" + j+ "] mi nakedPair es: "+ ij[0] + " " + ij[1] +"boramos: " + cand1.get(0)+ " y "+ cand1.get(1));
+				if(!((k==i && l==j) || (k==ij[0] && l==ij[1]))){
+				//	System.out.println("Me toca borrar: "+ cand1.get(0)+ " y "+ cand1.get(1) + " de "+ k + " " + l);
 					t.esborrarCandidatTauler(k, l, cand1.get(0));
 					t.esborrarCandidatTauler(k, l, cand1.get(1));
 				}
