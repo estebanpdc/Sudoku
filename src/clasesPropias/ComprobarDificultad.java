@@ -6,7 +6,7 @@ public class ComprobarDificultad extends Algoritmo{
 	
 	
 	public Integer getDificultad(Tablero t) {
-		NakedPairs
+		return 1;
 	}
 	
 		
