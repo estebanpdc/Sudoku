@@ -31,9 +31,18 @@ public class main {
 	}
 
 	private static void prueba() throws Exception {
-		ControladorCreacionTablero cc= new ControladorCreacionTablero();
-		
-		if(cc.tieneSolucion()) System.out.println("tiene solucion unica");
+		ComprobarDificultad cd= new ComprobarDificultad();
+		ControladorFicheros cf= new ControladorFicheros();
+		Algoritmo a= new Algoritmo();
+		Tablero t= cf.leerTablero(9);
+		//t.escribir();
+		//t.escribirCandidatos();
+		cd.nakedPairs(t);
+		t.escribirCandidatos();
+		a.recorrer(t, 3);
+	//	a.recorrer(t, 3);
+	//	a.recorrer(t, 3);
+		//t.escribir();
 		
 	}
 	

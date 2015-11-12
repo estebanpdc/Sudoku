@@ -83,7 +83,7 @@ public class ControladorFicheros {
 				t.setValorTauler(i, j, valor);
 				if (valor != 0) {
 					t.setCandidatsTauler(i, j, new boolean[n+1]);
-					a.actualizarPosiblesValorEscrito(i,j,n/3,valor,t);
+					a.actualizarPosiblesValorEscrito(i,j,valor,t);
 				}
 			}
 		}

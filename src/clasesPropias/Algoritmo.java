@@ -5,12 +5,12 @@ public class Algoritmo {
 	public Algoritmo() {}
 	
 	
-	public static void actualizarPosiblesValorEscrito(int i, int j, int N, int valor, Tablero t) {
-	       
-        for (int it = 0; it < N * N; ++it)  t.esborrarCandidatTauler(i, it, valor);
-        for (int it2 = 0; it2 < N * N; ++it2) t.esborrarCandidatTauler(it2, j, valor);
-        for (int it3 = (i / N)*3 ; it3 < (i/N)*3+N; ++it3) {
-            for(int it4 =( j / N)*3; it4 < (j/N)*3+N; ++it4) {
+	public static void actualizarPosiblesValorEscrito(int i, int j, int valor, Tablero t) {
+	     int box_size= (int) Math.sqrt(t.getMida());
+        for (int it = 0; it < t.getMida(); ++it)  t.esborrarCandidatTauler(i, it, valor);
+        for (int it2 = 0; it2 < t.getMida(); ++it2) t.esborrarCandidatTauler(it2, j, valor);
+        for (int it3 = (i / box_size)*box_size ; it3 < (i/box_size)*3+box_size; ++it3) {
+            for(int it4 =( j / box_size)*3; it4 < (j/box_size)*box_size+box_size; ++it4) {
 	                t.esborrarCandidatTauler(it3, it4, valor);
             }
         }		
@@ -22,7 +22,7 @@ public class Algoritmo {
 				boolean res[] = t.getCandidatsTauler(i, j);
 				int aux=0;
 				int valor=0;
-				for(int l = 1; l < 10; ++l) {
+				for(int l = 1; l < t.getMida(); ++l) {
 					if (res[l] == true){
 						++aux;
 						valor=l;
@@ -30,6 +30,7 @@ public class Algoritmo {
 				}
 				if(aux==1){
 					t.setValorTauler(i, j, valor);
+					actualizarPosiblesValorEscrito(i, j, valor, t);
 				}
 				
 
