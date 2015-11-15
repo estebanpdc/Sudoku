@@ -8,9 +8,14 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Arrays;
 import java.util.Scanner;
-
-public class main {
-	
+/**
+ * 	Clase que inicia la partida
+ * 	
+ * 	@author Grup 45 Sudoku
+ * 	@version 1.0
+ * 	@since 13-11-2015
+ */
+public class main {	
 
 	public static void main(String[] args) throws Exception {
 		Scanner s;

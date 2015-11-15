@@ -1,30 +1,63 @@
 package clasesPropias;
-
+/**
+ * 	Define las entradas de los Records	
+ * 
+ * 	@author Grup 45 Sudoku
+ * 	@version 1.0
+ * 	@since 13-11-2015
+ * 	@see Record
+ */
 public class MyEntry {
-
+	/**
+	 * 	Cadena de caracteres que almacenan un nombre
+	 */
     private String component1;
+    /**
+     * Valor integer menor que cero que almacena los mejores tiempos
+     */
     private Integer component2;
-
+    
+    /**
+     * Constructora por defecto
+     */
     public MyEntry() {
     }
-
+    /**
+     * 	Constructora que define tanto el primer componente (Usuario) como el segundo componente (Tiempo)
+     * 	@param	component1	Usuario a insertar
+     * 	@param	component2	Tiempo a insertar
+     */
     public MyEntry(String component1, Integer component2) {
             this.component1 = component1;
             this.component2 = component2;
     }
-
+    /**
+     * 	Devuelve el primer componente (Usuario)
+     * 	@return	Primer compontente de la entrada
+     */
     public String fst() {
             return component1;
     }
-
+    /**
+     * 	Cambia el valor del primer componente por uno nuevo
+     * 	@param	component1	El nuevo valor para el primer componente
+     */
     public void setComponent1(String component1) {
             this.component1 = component1;
     }
 
+    /**
+     * 	Devuelve el segundo componente (Tiempo)
+     * 	@return	Segundo compontente de la entrada
+     */
     public Integer snd() {
             return component2;
     }
 
+    /**
+     * 	Cambia el valor del segundo componente por uno nuevo
+     * 	@param	component2	El nuevo tiempo para el segundo componente
+     */
     public void setComponent2(Integer component2) {
             this.component2 = component2;
     }

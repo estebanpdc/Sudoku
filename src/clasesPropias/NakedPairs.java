@@ -1,9 +1,21 @@
 package clasesPropias;
 
 import java.util.ArrayList;
-
+//Javadoc a medias, hay que preguntar las funciones de las variables y lo que hace cada clase
+/**
+ * 	Extension de la clase Algoritmo que incluye la t&eacute;cnica de eliminaci&oacute;n de candidatos
+ * 	NakedPairs
+ * 	
+ * 	@author Grup 45 Sudoku
+ * 	@version 1.0
+ * 	@since 13-11-2015
+ */
 public class NakedPairs extends Algoritmo{
-
+	/**
+	 * 	Se inicia la busqueda de candidatos a descartar utilizando la t&eacute;cnica de eliminaci&oacute;n NakedPairs
+	 * 
+	 * 	@param t	Tablero del que queremos eliminar candidatos
+	 */
 	public void nakedPairs(Tablero t){
 		for(int i=0; i<t.getMida();++i){
 			for(int j=0; j<t.getMida(); ++j){
@@ -20,7 +32,15 @@ public class NakedPairs extends Algoritmo{
 			}
 		}
 	}
-
+	/**
+	 * 	
+	 * 	@param 	t	Tablero del que queremos eliminar candidatos
+	 * 	@param 	i	Posici&oacute; fila
+	 * 	@param 	j	Posici&oacute; columna
+	 * 	@param 	cand1
+	 * 	@param 	ij
+	 * 	@returns 
+	 */
 	private boolean NpRegion(Tablero t, int i, int j, ArrayList<Integer> cand1, Integer[] ij) {
 		boolean b=false;
 		int box_size= (int) Math.sqrt(t.getMida());
@@ -41,7 +61,9 @@ public class NakedPairs extends Algoritmo{
 		return b;
 		
 	}
-
+	/**
+	 * 	@param 	t	Tablero del que queremos eliminar candidatos
+	 */
 	private boolean NpColumna(Tablero t, int i, int j, ArrayList<Integer> cand1, Integer[] ij) {
 		boolean b=false;
 		for(int k=0; k<t.getMida(); ++k){
@@ -58,7 +80,9 @@ public class NakedPairs extends Algoritmo{
 		return b;
 		
 	}
-
+	/**
+	 * 	@param 	t	Tablero del que queremos eliminar candidatos
+	 */
 	private boolean NpFila(Tablero t, int i, int j,ArrayList<Integer> cand1, Integer[] ij) {
 		boolean b=false;
 		for(int k=0; k<t.getMida(); ++k){
@@ -74,7 +98,9 @@ public class NakedPairs extends Algoritmo{
 		}
 		return b;
 	}
-
+	/**
+	 * @param 	t	Tablero del que queremos eliminar candidatos
+	 */
 	private void borrarNpF(ArrayList<Integer> cand1, int i, int j, Integer[] ij,Tablero t) {
 		for(int k=0; k<t.getMida(); ++k){
 			if(k!=j && k!= ij[0]){
@@ -84,7 +110,6 @@ public class NakedPairs extends Algoritmo{
 		}
 		
 	}
-
 	private void borrarNpC(ArrayList<Integer> cand1, int i, int j,Integer[] ij, Tablero t) {
 		for(int k=0; k<t.getMida(); ++k){
 			if(k!=i && k!=ij[0]){

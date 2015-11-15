@@ -9,6 +9,7 @@ public class Tablero_comp {
        
         /**
          * Crea un tauler de mida NxN
+         * 	
          */
         public Tablero_comp(int N)
         {
@@ -79,7 +80,7 @@ public class Tablero_comp {
        
         /**
          * Esborra n dels candidats de la casella que hi
-         * ha a la posiciï¿½ x,y del tauler
+         * ha a la posici&oacute; x,y del tauler
          */
         public void esborrarCandidatTauler(int x, int y, int n)
         {
@@ -87,7 +88,7 @@ public class Tablero_comp {
         }
        
         /**
-         * Posa la casella de la posicio x,y del tauler com
+         * Posa la casella de la posici&oacute; x,y del tauler com
          * a defecte o no
          */
         public void setCasellaPor_defecto(int x, int y, boolean b)

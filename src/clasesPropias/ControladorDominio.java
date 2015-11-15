@@ -6,16 +6,36 @@ import java.io.InputStreamReader;
 import java.util.Scanner;
 
 import clasesComunes.Usuario_comp;
-
+/**
+ * 	Crea un tablero, asigna un valor y ademas, comprueba si es resolubre
+ * 
+ * 	@author Grup 45 Sudoku
+ * 	@version 1.0
+ * 	@since 16-11-2015
+ */
 public class ControladorDominio {
+	/**
+	 * 	Usuario que contendra el dominio
+	 */
 	private Usuario_comp u;
+	/**
+	 * 	Herramienta escaner que permite leer secuentas de cadenas, enteros, etc. 
+	 * 	que nos resultara util para saber las elecci&oacute;nes del usuarios
+	 */
 	private Scanner s;
 	
-	
+	/**
+	 *	Constructora por defecto
+	 *	@throws IOException
+	 */
 	ControladorDominio() throws IOException{
 		inicializar();
 	}
-	
+	/**
+	 * 	Inicializa la clase, cargando el usuario	
+	 * 
+	 *	@throws IOException
+	 */
 	private void inicializar() throws IOException {
 		s= new Scanner(System.in);
 		ControladorUsuario cu= new ControladorUsuario(u);
@@ -23,7 +43,11 @@ public class ControladorDominio {
 	}
 
 
-
+	/**
+	 * 	Opciones que puede usar el usuario
+	 * 
+	 * 	@param IOException Problema ocasionado intentar leer el siguiente valor integer
+	 */
 	private void Opciones() throws IOException {
 		System.out.println("---------MENU---------");
 		System.out.println("1.- Jugar partida");
